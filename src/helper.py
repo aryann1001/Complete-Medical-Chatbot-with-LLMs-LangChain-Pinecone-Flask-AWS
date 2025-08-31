@@ -1,6 +1,9 @@
-from langchain.document_loaders import PyPDFLoader, DirectoryLoader
+# from langchain.document_loaders import PyPDFLoader, DirectoryLoader
+from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
+# from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
+
 from typing import List
 from langchain.schema import Document
 
@@ -46,7 +49,7 @@ def text_split(extracted_data):
 #Download the Embeddings from HuggingFace 
 def download_hugging_face_embeddings():
     #this model return 384 dimensions, 
-    embeddings=HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')  
+    # embeddings=HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')  
 
     #using lighter model fordeployment purpose
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-MiniLM-L3-v2")  
